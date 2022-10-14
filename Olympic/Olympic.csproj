@@ -188,6 +188,9 @@
     <Compile Include="Windows\PersonalFiller.xaml.cs">
       <DependentUpon>PersonalFiller.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ReserveConfirm.xaml.cs">
+      <DependentUpon>ReserveConfirm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
     </Compile>
@@ -225,6 +228,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\PersonalFiller.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ReserveConfirm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
