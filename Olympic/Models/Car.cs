@@ -47,5 +47,10 @@ namespace Olympic.Models
         public string TransmissionType { get; set; }
 
         public string VIN { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Brand} {Model}";
+        }
     }
 }

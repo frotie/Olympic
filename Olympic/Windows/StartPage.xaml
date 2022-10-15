@@ -12,9 +12,9 @@
                     Padding="0 20"
                     Click="Button_Click"/>
             <Button Content="Поиск по клиентам" Margin="10"
-                    Padding="0 20"/>
+                    Padding="0 20" Click="Button_Click_1"/>
             <Button Content="Бронирование автомобиля" Margin="10"
-                    Padding="0 20"/>
+                    Padding="0 20" Click="Button_Click_2"/>
         </StackPanel>
     </Grid>
 </UserControl>

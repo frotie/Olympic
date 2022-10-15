@@ -8,7 +8,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <DataGrid x:Name="table" AutoGenerateColumns="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="table" AutoGenerateColumns="False"
+                  CanUserAddRows="False" CanUserDeleteRows="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="№"/>
                 <DataGridTextColumn Header="Категория комфортности"
@@ -36,7 +41,7 @@
                         <DataTemplate>
                             <Button Content="Забронировать"
                                     Click="Button_Click"
-                                    Tag="{Binding Id}"
+                                    Tag="{Binding}"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"/>
                         </DataTemplate>
@@ -44,5 +49,9 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+
+        <Button Grid.Row="1" HorizontalAlignment="Right"
+                Margin="10" VerticalAlignment="Center"
+                Content="Отмена" Click="Button_Click_1"/>
     </Grid>
 </UserControl>

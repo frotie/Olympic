@@ -173,20 +173,17 @@
     <Compile Include="Windows\CarSearching.xaml.cs">
       <DependentUpon>CarSearching.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\CategoriesFiller.xaml.cs">
-      <DependentUpon>CategoriesFiller.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\ClientFiller.xaml.cs">
-      <DependentUpon>ClientFiller.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Windows\DatabaseFiller.xaml.cs">
       <DependentUpon>DatabaseFiller.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\DatabaseSearcher.xaml.cs">
+      <DependentUpon>DatabaseSearcher.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DbPresenter.xaml.cs">
+      <DependentUpon>DbPresenter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\FreeCarsList.xaml.cs">
       <DependentUpon>FreeCarsList.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\PersonalFiller.xaml.cs">
-      <DependentUpon>PersonalFiller.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ReserveConfirm.xaml.cs">
       <DependentUpon>ReserveConfirm.xaml</DependentUpon>
@@ -211,23 +208,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\CategoriesFiller.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\ClientFiller.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Windows\DatabaseFiller.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\FreeCarsList.xaml">
+    <Page Include="Windows\DatabaseSearcher.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\PersonalFiller.xaml">
+    <Page Include="Windows\DbPresenter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\FreeCarsList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

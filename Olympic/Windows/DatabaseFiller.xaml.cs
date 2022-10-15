@@ -54,10 +54,11 @@ namespace Olympic.Windows
 
                 if (dbAvailableTypes.Contains(pi.PropertyType))
                 {
+                    IEnumerable elementsToSelect = GetDataFromDbByType(pi.PropertyType) as IEnumerable;
                     mainDb.Columns.Add(new DataGridComboBoxColumn()
                     {
                         Header = pi.Name,
-                        ItemsSource = GetDataFromDbByType(pi.PropertyType) as IEnumerable,
+                        ItemsSource = elementsToSelect,
                         SelectedItemBinding = new Binding(pi.Name)
                     });
                     continue;

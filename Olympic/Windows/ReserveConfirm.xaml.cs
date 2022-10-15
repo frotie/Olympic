@@ -23,16 +23,31 @@ namespace Olympic.Windows
     public partial class ReserveConfirm : UserControl
     {
         private readonly ApplicationContext db;
+        private readonly WorkAccounting wa;
 
         public ReserveConfirm(ApplicationContext db, WorkAccounting wa)
         {
             InitializeComponent();
             this.db = db;
+            this.wa = wa;
+
+            ReserveNum.Text = wa.Id.ToString();
+            ReserveDate.Text = wa.RentStart.ToString();
+            StartRent.Text = wa.RentStart.ToString();
+            EndRent.Text = wa.RentEnd.ToString();
+            DaysCount.Text = (wa.RentEnd - wa.RentStart).Days.ToString();
+            CategoryName.Text = wa.Car.Category.CategoryName;
+            Sale.Text = (wa.Sale * 1000 / 10).ToString() + "%";
+            Cost.Text = wa.Price.ToString();
+            FIO.Text = wa.Client.ToString();
+            Phone.Text = wa.Client.Phone.ToString();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            db.WorkAccountings.Add(wa);
+            MainWindow.SetPage(new StartPage(db));
+            MessageBox.Show("Бронированиие успешно выполнено");
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

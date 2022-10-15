@@ -1,0 +1,31 @@
+﻿<Window x:Class="Olympic.Windows.DatabaseSearcher"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Olympic.Windows"
+             mc:Ignorable="d" 
+        Title="Поиск в базе данных"
+        Width="400" Height="350">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Text="Поиск: " Margin="5"/>
+            <TextBox x:Name="Searcher" Grid.Column="1"
+                     TextChanged="Searcher_TextChanged"/>
+        </Grid>
+
+        <DataGrid x:Name="mainDb" AutoGenerateColumns="True"
+                  Grid.Row="1"
+                  CanUserAddRows="False" CanUserDeleteRows="False"/>
+    </Grid>
+</Window>

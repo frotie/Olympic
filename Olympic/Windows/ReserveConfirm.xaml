@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Olympic.Windows"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <Grid Background="white">
         <Grid.RowDefinitions>
             <RowDefinition Height="50px"/>
             <RowDefinition Height="auto"/>
@@ -28,6 +28,12 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+        </Grid.Resources>
+
         <TextBlock Grid.ColumnSpan="3" Text="Логотип и данные службы аренды"/>
         <TextBlock FontWeight="Bold" Text="Подтверждение бронирования" FontStyle="Italic"
                    Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
@@ -38,31 +44,35 @@
         <TextBlock x:Name="ReserveNum" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Text=""/>
         <TextBlock x:Name="ReserveDate" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Text=""/>
 
-        <TextBlock Grid.ColumnSpan="3" Text="Детали бронирования: " Grid.Row="4"/>
+        <TextBlock Grid.ColumnSpan="3" Text="Детали бронирования: "
+                   Grid.Row="4" FontWeight="Bold"/>
         
         <TextBlock Grid.Row="5" Text="Дата начала аренды"/>
         <TextBlock Grid.Row="5" Grid.Column="1" Text="Дата окончания аренды"/>
         <TextBlock Grid.Row="5" Grid.Column="2" Text="Кол-во суток"/>
 
-        <TextBlock Grid.Row="6" Text=""/>
-        <TextBlock Grid.Row="6" Grid.Column="1" Text=""/>
-        <TextBlock Grid.Row="6" Grid.Column="2" Text=""/>
+        <TextBlock Grid.Row="6" x:Name="StartRent" Text=""/>
+        <TextBlock Grid.Row="6" x:Name="EndRent" Grid.Column="1" Text=""/>
+        <TextBlock Grid.Row="6" x:Name="DaysCount" Grid.Column="2" Text=""/>
 
         <TextBlock Grid.Row="7" Text="Категория авто"/>
         <TextBlock Grid.Row="7" Grid.Column="1" Text="Скидка"/>
         <TextBlock Grid.Row="7" Grid.Column="2" Text="Стоимость"/>
 
-        <TextBlock Grid.Row="8" Text=""/>
-        <TextBlock Grid.Row="8" Grid.Column="1" Text=""/>
-        <TextBlock Grid.Row="8" Grid.Column="2" Text=""/>
+        <TextBlock Grid.Row="8" x:Name="CategoryName" Text=""/>
+        <TextBlock Grid.Row="8" x:Name="Sale" Grid.Column="1" Text=""
+                   FontWeight="Bold"/>
+        <TextBlock Grid.Row="8" x:Name="Cost" Grid.Column="2" Text=""
+                   FontWeight="Bold"/>
 
-        <TextBlock Grid.ColumnSpan="3" Text="Данные заказчика: " Grid.Row="9"/>
+        <TextBlock Grid.ColumnSpan="3" Text="Данные заказчика: "
+                   FontWeight="Bold" Grid.Row="9"/>
 
         <TextBlock Grid.Row="10" Text="ФИО"/>
         <TextBlock Grid.Row="11" Text="Телефон"/>
 
-        <TextBlock Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2" Text="ФИО"/>
-        <TextBlock Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2" Text="Телефон"/>
+        <TextBlock Grid.Row="10" x:Name="FIO" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="11" x:Name="Phone" Grid.Column="1" Grid.ColumnSpan="2"/>
 
         <Button Content="Оплатить" Grid.Column="2" Grid.Row="12" VerticalAlignment="Top"
                 HorizontalAlignment="Center" Margin="10"

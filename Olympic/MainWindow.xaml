@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Olympic"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
         <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
@@ -82,10 +83,14 @@
 
         <Menu IsMainMenu="True">
             <MenuItem Header="Файл">
-                
+                <MenuItem Header="Список автомобилей" Click="MenuItem_Click_5"/>
+                <MenuItem Header="Бронирование автомобилей" Click="MenuItem_Click_6"/>
+                <MenuItem Header="Сохранить и выйти" Click="MenuItem_Click_7"/>
             </MenuItem>
             <MenuItem Header="Отчеты">
-
+                <MenuItem Header="Активные аренды" Click="MenuItem_Click_8"/>
+                <MenuItem Header="Свободные автомобили" Click="MenuItem_Click_9"/>
+                <MenuItem Header="Отчет по таблице отчет работы"/>
             </MenuItem>
             <MenuItem Header="Справочник">
 

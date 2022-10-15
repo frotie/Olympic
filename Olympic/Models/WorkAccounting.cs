@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,5 +28,10 @@ namespace Olympic.Models
         public bool IsReserved { get; set; }
 
         public double Price { get; set; }
+
+        public double Sale { get; set; }
+
+        [NotMapped]
+        public IEnumerable<Car> AvailableCars { get; set; }
     }
 }

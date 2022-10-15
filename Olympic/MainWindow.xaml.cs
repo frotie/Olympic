@@ -69,5 +69,35 @@ namespace Olympic
         {
             new DatabaseFiller(db, typeof(WorkAccounting)).ShowDialog();
         }
+
+        private void MenuItem_Click_5(object sender, RoutedEventArgs e)
+        {
+            new DbPresenter(db.Cars).ShowDialog();
+        }
+
+        private void MenuItem_Click_6(object sender, RoutedEventArgs e)
+        {
+            new CarSearching(db).ShowDialog();
+        }
+
+        private void MenuItem_Click_7(object sender, RoutedEventArgs e)
+        {
+            db.SaveChanges();
+            Close();
+        }
+
+        private void MenuItem_Click_8(object sender, RoutedEventArgs e)
+        {
+            new DbPresenter(db.WorkAccountings.Where(x => x.RentEnd > DateTime.Now && x.RentStart < DateTime.Now)).ShowDialog();
+        }
+
+        private void MenuItem_Click_9(object sender, RoutedEventArgs e)
+        {
+            IEnumerable<Car> exCars = db.WorkAccountings
+                .ToList()
+                .Where(x => !CarSearching.IsWAFiltered(x, DateTime.Now, DateTime.Now, null, null))
+                .Select(x => x.Car);
+            new DbPresenter(db.Cars.ToList().Except(exCars)).ShowDialog();
+        }
     }
 }
